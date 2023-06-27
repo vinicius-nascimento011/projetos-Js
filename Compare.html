@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Compare com o meu segredo</button>
+
+<script>
+    var segredo = 7;
+    var contador = 0;
+    var tentativas = 3;
+
+    var input = document.querySelector("input");
+
+    function verifica() {
+        contador++;
+        if (contador <= tentativas) {
+            alert("Você tem " + (tentativas - contador + 1) + " tentativas para acertar meu segredo!");
+            
+            if (input.value == segredo) {
+                alert("Você acertou meu segredo!");
+            } else {
+                if (contador === tentativas) {
+                    alert("Acabou as chances!");
+                } else {
+                    input.value = "";
+                }
+            }
+        }
+    }
+
+    var button = document.querySelector("button");
+
+    button.onclick = verifica;
+
+</script>
